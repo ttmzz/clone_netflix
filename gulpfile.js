@@ -1,15 +1,15 @@
 // Importar pacotes
 
 // 1) Para o SASS
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const sourcemaps = require('gulp-sourcemaps');
-const cleanCss = require('gulp-clean-css');
+const gulp = require('gulp'); // 1) npm i --global gulp-cli -> 2) npm init -> 3) npm i --save-dev gulp -> 4) git init
+const sass = require('gulp-sass')(require('sass')); // npm i --save-dev gulp gulp-sass sass
+const sourcemaps = require('gulp-sourcemaps'); // npm i --save-dev gulp-sourcemaps 
+const cleanCss = require('gulp-clean-css'); // npm i --save-dev gulp-clean-css --save-dev
 // 2) Para o HTML
-const htmlmin = require('gulp-htmlmin');
+const htmlmin = require('gulp-htmlmin'); // npm i --save-dev gulp-htmlmin
 // 3) Para o javascript
-const uglify = require('gulp-uglify-es').default;
-const obfuscate = require('gulp-obfuscate');
+const uglify = require('gulp-uglify-es').default; // npm i --save-dev gulp-uglify-es
+const obfuscate = require('gulp-obfuscate'); // npm i --save-dev gulp gulp-obfuscate
 // 4) Para imagens
 const imagemin = require('gulp-imagemin'); // npm i gulp-imagemin@7.1.0 
 

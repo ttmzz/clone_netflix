@@ -1,0 +1,219 @@
+@use 'variaveis';
+
+.plano {
+    background-color: variaveis.$corDeFundoPrincipal;
+    position: relative;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 100px;
+    
+
+    &__container {
+        background: linear-gradient(149deg, #210e17 0%, #192247 99.08%);
+        color: variaveis.$corDotextoPrincipal;
+        height: 80px;
+        width: 1150px;
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 12px;
+
+        &:hover {
+            background: linear-gradient(149deg, #421c2d 0%, #2f3f82 99.08%);
+            transform: scale(1.04);
+            transition: transform 0.7s ease;
+            border: none;
+        
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.40rem;
+
+            @media (max-width: 640px) {
+                font-size: .84rem;
+
+            }
+           
+        }
+
+        &--btn {
+            width: 120px;
+            background: rgba(128, 128, 128, 0.4);
+            color: variaveis.$corDoTextoButton;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+
+            &:hover {
+              background: rgba(112, 112, 112, 0.4);
+            }
+
+            @media (max-width: 640px) {
+                height: 2.5rem;
+                width: 6.25rem;
+                font-size: .9rem;
+                margin-top: 1.2rem;
+
+            }
+        }
+
+        @media (max-width: 640px) {
+            width: 19rem;
+            height: 11.5rem;
+            margin-top: 8.75rem;
+            display: block;
+
+        }
+    }
+}
+
+.container--principal, .container--secundario, .catalogo {
+    background-color: variaveis.$corDeFundoPrincipal;
+
+}
+
+.container--secundario {
+    visibility: hidden;
+}
+
+.catalogo {
+    height: 36vh;
+    width: 82vw;
+    margin-left: 7.5rem;
+    margin-bottom: 4rem;
+    
+    @media (max-width: 640px) {
+        padding-top: 5rem;
+        margin-left: 2rem;
+            
+    }
+
+    &__titulo {
+        display: inline;
+
+        h2 {
+            color: variaveis.$corDotextoPrincipal;
+            margin-bottom: 1rem;
+
+            @media (max-width: 640px) {
+                font-size: 1.2rem;
+            
+            }
+        }
+    }
+
+    &__filmes {
+        background-color: variaveis.$corDeFundoPrincipal;
+        width: 84vw;
+        display: flex;     
+        max-width: 100%;
+        padding: 10px;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        transition: transform 0.3s ease-in-out; 
+
+        @media (max-width: 640px) {
+           
+            
+        }
+        
+        &__lista {
+            display: block;
+            
+            &__menu {
+                display: flex;
+                gap: 30px;
+
+                &__item {
+                    position: relative;
+                    flex: 0 0 auto; // aumenta o tamanho da imagem dos filmes
+                    transition: transform 0.3s ease-in-out;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.04);
+                        border-radius: 0.5rem;
+                        border: 1px solid;
+                        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); 
+                    }
+
+                    &__link {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        border-radius: 0.5rem;
+
+                        @media (max-width: 640px) {
+                            height: 10.25rem;
+                            width: 7.5rem;
+            
+                        }
+
+                    }
+
+                   .num {
+                        position: absolute;
+                        top: 12.55rem;
+                        left: 2px;
+                        font-size: 4rem;
+                        font-weight: 900;
+                        z-index: 2;
+                        color: variaveis.$corDeFundoPrincipal; // cor de fundo interno do número
+                        -webkit-text-stroke: 0.10rem variaveis.$corDotextoPrincipal; // cor de fundo do número
+                        text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+                        pointer-events: none;
+
+
+                      @media (max-width: 640px) {
+                          top: 7.35rem;
+                          left: 2px;
+                          font-size: 2.6rem;
+            
+                        }
+
+                    }
+                }
+
+                .seta {
+                    background: rgba(54, 54, 54, 0.5);
+                    color: variaveis.$corDoTextoButton;
+                    position: absolute;
+                    font-size: 1rem;
+                    height: 7.5rem;
+                    width: 1.5rem;
+                    border-radius: 0.5rem;
+                    border: none;
+                    margin-top: 6rem;
+                    cursor: pointer;
+
+                     &:hover {
+                       background: rgba(96, 96, 96, 0.4);
+                    }   
+
+                    @media (max-width: 640px) {
+                        margin-top: 2rem;
+            
+                    }
+                    
+
+                    &--esquerda {
+                        left: 10px;
+                    }
+
+                    &--direita {
+                        right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}

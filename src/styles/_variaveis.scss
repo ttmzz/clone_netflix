@@ -1,0 +1,34 @@
+$corDeFundoPrincipal: rgba(0, 0, 0, 0.9);
+$corDotextoPrincipal: rgb(255, 255, 255);
+$corDoButton: rgb(229, 9, 20);
+$corButtonSelect: rgb(213, 0, 11);
+$corDoTextoButton: white;
+$corDoTexto: rgba(255, 255, 255, 0.7);
+$plataformaColor: linear-gradient(149deg, #192247 0%, #210e17 99.08%);
+$corDeFundoDasPerguntas: rgb(45, 45, 45);
+$corDeFundoDasPerguntas--select: #3d3d3d;
+
+// SELETORES DA BARRA DE CURVA
+
+$corDaBordaDeCurva: linear-gradient(
+                    to right,
+                    rgba(33, 13, 22, 1) 16%,
+                    rgba(184, 40, 105, 1),
+                    rgba(229, 9, 20, 1),
+                    rgba(184, 40, 105, 1),
+                    rgba(33, 13, 22, 1) 84%
+);
+
+$corDeFundoDaCurva:  radial-gradient(
+                    50% 500% at 50% -420%,
+                    rgba(64, 97, 231, 0.4) 80%,
+                    rgba(0, 0, 0, 0.1) 108%
+),black;
+
+// SELETOR DOS ANÚNCIOS
+
+$corDeFundoDoConteudo: radial-gradient(
+  50% 300% at 50% -250%,
+  rgba(90, 30, 237, 0.35) 80%,
+  rgba(68, 94, 221, 0.35) 100% 
+), black;

@@ -1,0 +1,84 @@
+@use 'variaveis';
+@use 'header';
+@use 'secao';
+@use 'borda-curve';
+@use 'catalog';
+@use 'plataformas';
+@use 'questions';
+@use 'footer';
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../assets/fonts/Inter-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    list-style: none;
+}
+
+
+body {
+    background-color: variaveis.$corDeFundoPrincipal;
+}
+
+.button--red {
+    background-color: variaveis.$corDoButton;
+    color: variaveis.$corDoTextoButton;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: variaveis.$corButtonSelect;
+    }
+}
+
+.laguage_seletor {
+    background-color: rgba($color: variaveis.$corDeFundoPrincipal, $alpha: 0.1);
+    color: variaveis.$corDoTextoButton;
+    font-size: 1.1rem;
+    width: 8.75rem;
+    padding-top: 0.38rem;
+    padding-right: 1rem;
+    padding-bottom: 0.38rem;
+    padding-left: calc(0.1rem + 0.5rem + 0.5rem);
+    border-radius: 0.25rem;
+    border-color: rgba(128, 128, 128, 0.7);
+
+    .op {
+        background-color: #fff;
+        color: variaveis.$corDeFundoPrincipal;
+    }
+}
+
+.btn__menu {
+    display: flex;
+    align-items: center;
+    font-size: 0.92rem;
+    min-height: 2rem;
+    padding: 0.25rem 1rem;
+    position: relative;
+
+}
+
+.text--position-botton {
+    margin-bottom: 2.6rem;
+}

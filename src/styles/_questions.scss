@@ -1,0 +1,95 @@
+@use 'variaveis';
+
+.questions {
+  max-width: 88rem;
+  margin-bottom: 3.5rem;
+
+  &__container {
+    margin-left: 7.875rem;
+
+    @media (max-width: 640px) {
+      margin-left: 2.6rem;
+
+    }
+
+    .tituloDasPerguntas {
+      color: variaveis.$corDotextoPrincipal;
+      font-size: 1.6rem;
+      margin-bottom: 1.1rem;
+    }
+
+    &__menu {
+      width: 100%;
+
+      .lista {
+
+        &__item {
+          background-color: variaveis.$corDeFundoDasPerguntas;
+          color: variaveis.$corDotextoPrincipal;
+          margin-bottom: 1rem;
+          position: relative;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          transition: background-color 0.3s ease;
+
+          @media (max-width: 640px) {
+            margin-bottom: .6rem;
+            width: 19.4rem;
+
+          }
+
+          &:hover {
+            background: linear-gradient(149deg, variaveis.$corDeFundoDasPerguntas--select 0%);
+          }
+
+          .lista__item__pergunta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+
+            @media (max-width: 640px) {
+              font-size: 1.2rem;
+
+            }
+          }
+
+          .lista__item__icon {
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+          }
+
+          .lista__item__resposta {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s ease;
+            background: lighten(variaveis.$corDeFundoDasPerguntas, 0%);
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            ul {
+              padding: 1rem 1.5rem;
+            }
+          }
+
+          &.is-open {
+            .lista__item__icon {
+              transform: rotate(45deg); // "+" vira "×"
+            }
+
+            .lista__item__resposta {
+              max-height: 31.25rem;
+              opacity: 1;
+              padding: 1rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

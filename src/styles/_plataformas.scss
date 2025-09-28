@@ -2,78 +2,76 @@
 
 .plataformas {
   background-color: variaveis.$corDeFundoPrincipal;
-  height: clamp(22rem, 40vh, 25.75rem);
-  width: clamp(19rem, 90vw, 80rem);
-  margin-top: 3.5rem;
-  margin-left: clamp(1rem, 8vw, 7.875rem);
-
-  @media (max-width: 640px) {
-    height: auto;
-    margin-left: 2.6rem;
-  }
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
 
   &__container {
-    color: variaveis.$corDotextoPrincipal;
-    height: 100%;
     width: 100%;
-    margin-bottom: clamp(2rem, 6vh, 3.75rem);
-
-    @media (max-width: 640px) {
-      display: inline-block;
-    }
+    max-width: 1280px;
+    color: variaveis.$corDotextoPrincipal;
 
     h2 {
-      margin-bottom: clamp(0.75rem, 2vh, 1.1rem);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2.5rem;
+
+      @media (max-width: 640px) {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+      }
     }
 
     &__lista {
-      display: flex;
-      flex-direction: row;
-      gap: clamp(0.5rem, 2vw, 1rem);
-
-      @media (max-width: 640px) {
-        flex-direction: column;
-        gap: 0.6rem;
-      }
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
 
       .plataforma {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         position: relative;
         background: variaveis.$plataformaColor;
-        height: clamp(12rem, 30vh, 18.75rem);
-        width: clamp(18rem, 60vw, 45.5rem);
-        padding: clamp(1rem, 3vh, 1.5rem) 1rem clamp(3rem, 6vh, 5rem) 1rem;
+        padding: 1.5rem 1.25rem 3.5rem; // padding reduzido
         border-radius: 1rem;
+        height: 18.75rem; // altura aproximada da Netflix
+       
 
         @media (max-width: 640px) {
           height: 12.4rem;
-          width: 19.2rem;
+          padding: 1.25rem 1rem 3rem;
         }
 
         &__title {
+          font-size: clamp(1rem, 2vw, 1.3rem);
           font-weight: bold;
           font-style: oblique;
+          margin-bottom: 0.5rem;
         }
 
         &__text {
+          font-size: clamp(0.9rem, 1.8vw, 1rem);
           color: variaveis.$corDoTexto;
-          font-size: clamp(0.88rem, 2vw, 1rem);
-          width: 93.4%;
+          line-height: 1.4;
+          flex-grow: 1;
         }
 
         img {
           position: absolute;
-          bottom: 10px;
-          right: 10px;
-          height: clamp(2.5rem, 5vh, 3.35rem);
-          width: clamp(2.5rem, 6vw, 3.5rem);
+          bottom: 1rem;
+          right: 1rem;
+          height: clamp(2.2rem, 5vh, 3rem);
+          width: clamp(2.2rem, 5vw, 3rem);
+
+          @media (max-width: 640px) {
+            height: 2.5rem;
+            width: 2.5rem;
+          }
         }
       }
     }
   }
-
-  @media (max-width: 640px) {
-    h2 {
-      font-size: 1.2em;
-    }
-  }
 }
+

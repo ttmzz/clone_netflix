@@ -37,6 +37,7 @@
 
 body {
     background-color: variaveis.$corDeFundoPrincipal;
+    overflow-x: hidden;
 }
 
 .button--red {
@@ -83,3 +84,4 @@ body {
 .text--position-botton {
     margin-bottom: 2.6rem;
 }
+

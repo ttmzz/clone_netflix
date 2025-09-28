@@ -26,62 +26,57 @@
     height: 83.8vh;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
     
     &__content {
-        height: 11.25rem;
-        max-width: 43.75rem;
+        height: clamp(10rem, 15vh, 11.25rem);
+        max-width: clamp(20rem, 60vw, 43.75rem);
         width: 100%;
-        margin-top: 8rem;
+        margin-top: clamp(2rem, 10vh, 8rem);
 
         @media (max-width: 640px) {
-            max-width: 20rem;
+            max-width: 27.2rem;
             width: 100%;
             margin-top: 0;
             
           }
         
         
-        &__titulo {
-           font-size: 2rem;
-           text-align: center;
-           margin-bottom: 1rem;
+        &__titulo h1 {
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          font-weight: bold;
+          margin-bottom: 1rem;
 
-           @media (max-width: 640px) {
-                font-size: 1rem;
-            }
+        @media (max-width: 640px) {
+          font-size: 2rem;
+          text-align: center;
         }
+      }
 
         &__texto {
           color: variaveis.$corDoTexto;
-           font-size: 1rem;
-           text-align: center;
-           margin-bottom: 1.2rem;
+          font-size: clamp(0.875rem, 2vw, 1rem);
+          text-align: center;
+          margin-bottom: 1.2rem;
            
            &__preco {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
             font-weight: bolder;
-            margin-bottom: 2rem;
+            margin-bottom: clamp(1rem, 2vw, 2rem);
 
             @media (max-width: 640px) {
-              font-size: 1rem;
               font-weight: normal;
               width: 99%;
-              margin-bottom: 1rem;
+              
             }
-           }
-
-           .anuncio {
-               @media (max-width: 640px) {
-                
-            }
-           }
+          }
         }
 
         &__form {
           display: flex;
           justify-content: center;
-          height: 3.5rem;
-          gap: 8px;
+          height: clamp(3rem, 6vh, 3.5rem);
+          gap: clamp(0.5rem, 1vw, 8px);
 
           @media (max-width: 640px) {
               display: flex;
@@ -93,9 +88,9 @@
           .email {
             color: variaveis.$corDotextoPrincipal;
             background: transparent;
-            font-size: 1rem;
-            width: 25rem;
-            padding: 24px 8px 16px;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            width: clamp(15rem, 50vw, 25rem);
+            padding: clamp(1rem, 2vh, 24px) 8px clamp(0.75rem, 2vh, 16px);
             border-radius: 0.25rem;
             border: 1px solid #979797;
 
@@ -112,7 +107,7 @@
           }
 
           .btn__form {
-            font-size: 1.3rem;
+            font-size: clamp(0.85rem, 2vw, 1.3rem);
             width: auto;
             padding: 0.75rem 1.5rem;
             border: variaveis.$corDoButton;

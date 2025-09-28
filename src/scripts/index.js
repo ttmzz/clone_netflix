@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-
+document.addEventListener('DOMContentLoaded', function () {
   const catalogo = document.querySelector('.catalogo__filmes');
   const btnEsq = document.querySelector('.seta--esquerda');
   const btnDir = document.querySelector('.seta--direita');
@@ -8,43 +7,50 @@ document.addEventListener('DOMContentLoaded', function() {
   // Definir o tamanho do incremento para rolar (por exemplo, 300px)
   const scrollIncrement = 300;
 
-  // Função para verificar se a tela é menor que 1024px (ajuste conforme necessário)
+  // Função para verificar se a tela é menor que 1024px
   const isSmallScreen = () => window.innerWidth <= 1024;
 
-   // 👇 Atualiza a visibilidade dos botões com base na posição atual do scroll
+  // Atualiza a visibilidade dos botões com base na posição atual do scroll
   const updateButtonVisibility = () => {
-    const scrollLeft = scrollArea.scrollLeft;
-    const maxScrollLeft = scrollArea.scrollWidth - scrollArea.clientWidth;
+    const scrollLeft = catalogo.scrollLeft;
+    const maxScrollLeft = catalogo.scrollWidth - catalogo.clientWidth;
 
-    // Se está no início, esconde botão da esquerda
     btnEsq.style.display = scrollLeft <= 0 ? 'none' : 'block';
-
-    // Se está no fim, esconde botão da direita
     btnDir.style.display = scrollLeft >= maxScrollLeft - 1 ? 'none' : 'block';
   };
 
-  // Função para rolar suavemente se estiver em tela pequena
+  // Função para rolar suavemente, só de 1 em 1 incremento, sem rolar direto até o fim
   const handleScroll = (direction) => {
-    if (isSmallScreen()) {
-      // Se estiver em tela pequena, rolar de forma suave
-      const scrollAmount = direction === 'left' ? -scrollIncrement : scrollIncrement;
-      catalogo.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    } else {
-      // Caso contrário, rolar até o início ou fim, como antes
-      const scrollToValue = direction === 'left' ? 0 : catalogo.scrollWidth;
-      catalogo.scrollTo({ left: scrollToValue, behavior: 'smooth' });
-    }
+    const scrollAmount = direction === 'left' ? -scrollIncrement : scrollIncrement;
+    catalogo.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+
+    setTimeout(updateButtonVisibility, 400);
   };
 
   // Ações para os botões de navegação
   btnEsq.addEventListener('click', () => handleScroll('left'));
   btnDir.addEventListener('click', () => handleScroll('right'));
 
-  // Seção FAQ, accordion
-  items.forEach(item => {
+  // Inicializa a visibilidade correta dos botões
+  updateButtonVisibility();
+
+  // FAQ - abre uma pergunta por vez e rola suavemente até ela
+  items.forEach((item) => {
     item.addEventListener('click', () => {
-      item.classList.toggle('is-open');
+      const isOpen = item.classList.contains('is-open');
+
+      // Fecha todas as perguntas antes de abrir a nova
+      items.forEach((el) => el.classList.remove('is-open'));
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        item.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'nearest'
+        });
+      }
     });
   });
-
 });
+

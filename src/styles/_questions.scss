@@ -2,63 +2,55 @@
 @use 'variaveis';
 
 .questions {
-  max-width: 88rem;
-  margin-bottom: 3.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 4rem); // padding lateral responsivo
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
 
   &__container {
-    margin-left: 7.875rem;
-
-    @media (max-width: 640px) {
-      margin-left: 2.6rem;
-
-    }
-
+    width: 100%;
+    
     .tituloDasPerguntas {
       color: variaveis.$corDotextoPrincipal;
-      font-size: 1.6rem;
-      margin-bottom: 1.1rem;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      margin-bottom: clamp(0.75rem, 2vh, 1.1rem);
     }
 
     &__menu {
       width: 100%;
 
       .lista {
+        width: 100%;
 
         &__item {
           background-color: variaveis.$corDeFundoDasPerguntas;
           color: variaveis.$corDotextoPrincipal;
-          margin-bottom: 1rem;
+          margin-bottom: clamp(0.5rem, 2vh, 1rem);
+          width: 100%;
           position: relative;
           cursor: pointer;
           display: flex;
           flex-direction: column;
           transition: background-color 0.3s ease;
 
-          @media (max-width: 640px) {
-            margin-bottom: .6rem;
-            width: 19.4rem;
-
-          }
-
           &:hover {
-            background: linear-gradient(149deg, variaveis.$corDeFundoDasPerguntas--select 0%);
+            background: linear-gradient(
+              149deg,
+              variaveis.$corDeFundoDasPerguntas--select 0%
+            );
           }
 
           .lista__item__pergunta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem;
-            font-size: 1.6rem;
-
-            @media (max-width: 640px) {
-              font-size: 1.2rem;
-
-            }
+            padding: clamp(1rem, 3vw, 1.5rem);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            width: 100%;
           }
 
           .lista__item__icon {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             transition: transform 0.3s ease;
           }
 
@@ -79,11 +71,11 @@
 
           &.is-open {
             .lista__item__icon {
-              transform: rotate(45deg); // "+" vira "×"
+              transform: rotate(45deg);
             }
 
             .lista__item__resposta {
-              max-height: 31.25rem;
+              max-height: clamp(20rem, 50vh, 31.25rem);
               opacity: 1;
               padding: 1rem 0;
             }

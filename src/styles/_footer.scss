@@ -1,212 +1,180 @@
 @use 'variaveis';
 
 .footer {
-    width: 88rem;
-    margin-left: 5.7rem;
-    margin-bottom: 3.5rem;
+  width: 100%;
+  padding: 0 clamp(1rem, 6vw, 5rem);
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(1rem, 4vw, 1.5rem);
 
     @media (max-width: 640px) {
-        margin-left: 1.2rem;
-
+      display: block;
     }
 
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem;
+    &__tabela {
+      color: variaveis.$corDotextoPrincipal;
+      margin-left: clamp(0rem, 10vw, 14rem);
+
+      @media (max-width: 640px) {
+        margin-left: 0;
+      }
+
+      h3 {
+        font-weight: 200;
+        text-align: center;
 
         @media (max-width: 640px) {
-           display: block;
-
+          text-align: start;
+          width: 100%;
         }
-        
+      }
 
-        &__tabela {
-            color: variaveis.$corDotextoPrincipal;
-            margin-left: 14rem;
+      .form {
+        display: flex;
+        margin-top: 1rem;
+        gap: 10px;
 
-            @media (max-width: 640px) {
-               margin-left: 0;
-
-            }
-            
-            h3 {
-                font-weight: 200;
-                text-align: center;
-
-                @media (max-width: 640px) {
-                   text-align: start;
-                   width: 28rem;
-
-                }
-            }
-
-           .form {
-             display: flex;
-             margin-top: 1rem;
-             gap: 10px;
-
-            @media (max-width: 640px) {
-                flex-direction: column;
-
-            }
-
-            .email {
-                    color: variaveis.$corDotextoPrincipal;
-                    background: transparent;
-                    font-size: 1rem;
-                    width: 40.625rem;
-                    padding: 24px 8px 16px;
-                    border-radius: 0.25rem;
-                    border: 1px solid #979797;
-
-                    &::placeholder {
-                        color: #d5d5d5;
-                    }
-
-                    @media (max-width: 640px) {
-                        height: 3rem;
-                        width: 19rem;
-                        padding: 24px 8px 18px;
-
-                    }
-
-                }
-
-                .btn__form {
-                    font-size: 1.3rem;
-                    width: 11rem;
-                    padding: 0.75rem 1.5rem;
-                    border: variaveis.$corDoButton;
-
-                    @media (max-width: 640px) {
-                        font-size: .861rem;
-                        width: 8rem;
-
-                    }
-                }
-            }
+        @media (max-width: 640px) {
+          flex-direction: column;
         }
+
+        .email {
+          color: variaveis.$corDotextoPrincipal;
+          background: transparent;
+          font-size: clamp(0.9rem, 2vw, 1rem);
+          width: clamp(16rem, 50vw, 40.625rem);
+          padding: 24px 8px 16px;
+          border-radius: 0.25rem;
+          border: 1px solid #979797;
+
+          &::placeholder {
+            color: #d5d5d5;
+          }
+
+          @media (max-width: 640px) {
+            height: 3rem;
+            width: 100%;
+            padding: 24px 8px 18px;
+          }
+        }
+
+        .btn__form {
+          font-size: clamp(0.85rem, 2vw, 1.3rem);
+          width: clamp(6rem, 15vw, 11rem);
+          padding: 0.75rem 1.5rem;
+          border: variaveis.$corDoButton;
+
+          @media (max-width: 640px) {
+            width: 8rem;
+          }
+        }
+      }
     }
-
+  }
 }
 
 .footer2 {
-    margin-left: 7.875rem;
+  width: 100%;
+  padding: 0 clamp(1rem, 6vw, 5rem);
+  margin-top: 2rem;
 
-    @media (max-width: 640px) {
-        margin-left: 3.2rem;
+  .contato {
+    color: variaveis.$corDoTexto;
+    margin-bottom: 2.3rem;
 
+    .sublinhado {
+      text-decoration: underline;
     }
-   
-     
-    .contato {
-        color: variaveis.$corDoTexto;
-        margin-bottom: 2.3rem;
+  }
 
-        .sublinhado {
-            text-decoration: underline;
+  &__informacoes {
+    width: 100%;
+
+    .footer2__links {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 640px) {
+        display: block;
+      }
+
+      .tab {
+        display: flex;
+        margin-bottom: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @media (max-width: 640px) {
+          display: block;
         }
-    }
 
-    &__informacoes {
-        width: 71.25rem;
-        
+        .links__item {
+          margin-bottom: 1rem;
 
-        .footer2__links {
-            display: flex;
-            justify-content: space-between;
-
-            @media (max-width: 640px) {
-                display: block;
-
-            }
-
-            .tab {
-                display: flex;
-                margin-bottom: 16px;
-                flex-direction: column; 
-                align-items: flex-start;
-                flex-wrap: wrap;
-                justify-content: center;
-
-                @media (max-width: 640px) {
-                   display: block;
-
-                }
-
-                .links__item {
-                    margin-bottom: 1rem;
-
-                    .text--link {
-                       color: variaveis.$corDoTexto;
-                       font-size: 0.9rem;
-                    }
-                }
-            }
+          .text--link {
+            color: variaveis.$corDoTexto;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+          }
         }
+      }
     }
+  }
 }
 
 .footer3 {
-    margin-top: 20px;
-    margin-left: 7.875rem;
+  width: 100%;
+  padding: 0 clamp(1rem, 6vw, 5rem);
+  margin-top: 5rem;
 
-    @media (max-width: 640px) {
-        margin-top: 80px;
-        margin-left: 2rem;
+  .header__links {
+    .header__links__item {
+      span {
+        @media (max-width: 640px) {
+          top: -15.4px;
+          padding-left: 2px;
+        }
+      }
+    }
+  }
 
+  &__container {
+    padding-bottom: 2rem;
+
+    .laguage_seletor {
+      margin-bottom: 2.3rem;
+
+      @media (max-width: 640px) {
+        display: block;
+        width: auto;
+        height: auto;
+      }
     }
 
-    .header__links {
-        .header__links__item {
-           span {
-                @media (max-width: 640px) {
-                    top: -15.4px;
-                    padding-left: 2px;
+    .detalhes {
+      color: gray;
 
-                }
-            }
+      .text--position-botton {
+        span {
+          color: variaveis.$corDoTexto;
+
+          @media (max-width: 640px) {
+            font-size: 0.9rem;
+          }
         }
+
+        @media (max-width: 640px) {
+          font-size: 0.82rem;
+          width: 100%;
+          line-height: 16px;
+        }
+      }
     }
-
-
-    &__container {
-        padding-bottom: 2rem;
-
-        .laguage_seletor {
-            margin-bottom: 2.3rem;
-
-            @media (max-width: 640px) {
-                display: block;
-                width: auto;
-                height: auto;
-
-            }
-        }
-
-        .detalhes {
-            color: gray;
-
-            .text--position-botton {
-                
-                span {
-                    color: variaveis.$corDoTexto;
-
-                    @media (max-width: 640px) {
-                        font-size: 0.9rem;
-
-                    } 
-                }
-
-                @media (max-width: 640px) {
-                    font-size: 0.82rem;
-                    width: 360px;
-                    line-height: 16px;
-
-                } 
-            }
-        }
-    }
+  }
 }
+
